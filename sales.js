@@ -108,6 +108,7 @@ const lima = {
   },
 };
 
+// Adding to HTML with a Loopdeeloop
 const locations = [seattle, tokyo, dubai, paris, lima];
 
 for (ix = 0; ix < locations.length; ix++) {
