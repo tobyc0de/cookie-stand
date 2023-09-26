@@ -30,7 +30,7 @@ const seattle = {
     for (let i = 0; i < hours.length; i++) {
       const randNum = randomNumber(this.minCust, this.maxCust);
       this.customersPerHour.push(randNum);
-      this.cookiesPerHour.push(randNum * this.avgCookiesPerCust);
+      this.cookiesPerHour.push(Math.floor(randNum * this.avgCookiesPerCust));
       this.totalCookiesSold += this.cookiesPerHour[i];
     }
   },
@@ -48,7 +48,7 @@ const tokyo = {
     for (let i = 0; i < hours.length; i++) {
       const randNum = randomNumber(this.minCust, this.maxCust);
       this.customersPerHour.push(randNum);
-      this.cookiesPerHour.push(randNum * this.avgCookiesPerCust);
+      this.cookiesPerHour.push(Math.floor(randNum * this.avgCookiesPerCust));
       this.totalCookiesSold += this.cookiesPerHour[i];
     }
   },
@@ -66,7 +66,7 @@ const dubai = {
     for (let i = 0; i < hours.length; i++) {
       const randNum = randomNumber(this.minCust, this.maxCust);
       this.customersPerHour.push(randNum);
-      this.cookiesPerHour.push(randNum * this.avgCookiesPerCust);
+      this.cookiesPerHour.push(Math.floor(randNum * this.avgCookiesPerCust));
       this.totalCookiesSold += this.cookiesPerHour[i];
     }
   },
@@ -84,7 +84,7 @@ const paris = {
     for (let i = 0; i < hours.length; i++) {
       const randNum = randomNumber(this.minCust, this.maxCust);
       this.customersPerHour.push(randNum);
-      this.cookiesPerHour.push(randNum * this.avgCookiesPerCust);
+      this.cookiesPerHour.push(Math.floor(randNum * this.avgCookiesPerCust));
       this.totalCookiesSold += this.cookiesPerHour[i];
     }
   },
@@ -102,7 +102,7 @@ const lima = {
     for (let i = 0; i < hours.length; i++) {
       const randNum = randomNumber(this.minCust, this.maxCust);
       this.customersPerHour.push(randNum);
-      this.cookiesPerHour.push(randNum * this.avgCookiesPerCust);
+      this.cookiesPerHour.push(Math.floor(randNum * this.avgCookiesPerCust));
       this.totalCookiesSold += this.cookiesPerHour[i];
     }
   },
@@ -125,11 +125,11 @@ for (ix = 0; ix < locations.length; ix++) {
   article.appendChild(ul);
   for (i = 0; i < hours.length; i++) {
     const li = document.createElement("li");
-    li.textContent = `${hours[i]}: ${locations[ix].cookiesPerHour[i]}`;
+    li.textContent = `${hours[i]}: ${locations[ix].cookiesPerHour[i]} cookies`;
     console.log(li);
     ul.appendChild(li);
   }
   const li2 = document.createElement("li");
-  li2.textContent = `Total: ${locations[ix].totalCookiesSold}`;
+  li2.textContent = `Total: ${locations[ix].totalCookiesSold} cookies`;
   ul.appendChild(li2);
 }
