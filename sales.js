@@ -63,7 +63,6 @@ const headerRow = document.createElement("tr");
 shopTable.appendChild(headerRow);
 //put empty cell into header row
 const emptyCell = document.createElement("td");
-emptyCell.textContent = "";
 headerRow.appendChild(emptyCell);
 // put hours into header row
 for (i = 0; i < hours.length; i++) {
@@ -129,7 +128,8 @@ for (i = 0; i < hours.length; i++) {
 const bottomRow = document.createElement("tr");
 shopTable.appendChild(bottomRow);
 // add empty cell
-bottomRow.appendChild(emptyCell);
+const emptyCell2 = document.createElement("td");
+bottomRow.appendChild(emptyCell2);
 // Add hourlyTotals to table
 for (i = 0; i < hourlyTotal.length; i++) {
   const hourlyTotalTD = document.createElement("td");
