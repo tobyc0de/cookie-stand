@@ -1,0 +1,57 @@
+td,
+th {
+  border: 5px solid blueviolet;
+  text-transform: capitalize;
+}
+
+#tableOfShops > table > tr:nth-child(1) > td,
+#tableOfShops > table > tr:nth-child(7) > td:nth-child(1) {
+  visibility: hidden;
+}
+
+td,
+th {
+  min-width: 30px;
+  padding: 10px;
+  font-size: 1.5rem;
+}
+
+tr:nth-of-type(odd) {
+  background-color: salmon;
+}
+tr:nth-of-type(even) {
+  background-color: rgb(150, 255, 131);
+}
+
+th {
+  background-color: blueviolet;
+  color: white;
+}
+
+td:last-child,
+td:first-child,
+tr:last-child {
+  background-color: #8d2cde;
+  color: white;
+  font-weight: bold;
+}
+
+body {
+  background-color: rgb(111, 171, 255);
+  background-size: 100px;
+  background-blend-mode: screen;
+  font-family: "Tangerine", serif;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 200px auto;
+  vertical-align: middle;
+}
+header > div {
+  vertical-align: middle;
+}
+
+#logo {
+  width: 200px;
+}
