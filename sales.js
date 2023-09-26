@@ -127,9 +127,10 @@ for (i = 0; i < hours.length; i++) {
 // create bottom row
 const bottomRow = document.createElement("tr");
 shopTable.appendChild(bottomRow);
-// add empty cell
-const emptyCell2 = document.createElement("td");
-bottomRow.appendChild(emptyCell2);
+// add Totals cell
+const totalCell2 = document.createElement("td");
+totalCell2.textContent = "Total";
+bottomRow.appendChild(totalCell2);
 // Add hourlyTotals to table
 for (i = 0; i < hourlyTotal.length; i++) {
   const hourlyTotalTD = document.createElement("td");
