@@ -15,6 +15,48 @@ header {
   justify-content: center;
 }
 
+header {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px dashed #444444;
+}
+nav {
+  width: 960px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-content: center;
+  display: flex;
+  padding: 10px 0px;
+}
+
+nav > img {
+  height: 70px;
+  width: 200px;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  margin: 00px 10px;
+}
+
+nav > a {
+  height: 70px;
+  width: 200px;
+  color: #262622;
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  margin: 00px 10px;
+  text-decoration: none;
+  font-size: 25px;
+}
+nav > a:hover {
+  color: #f7836f;
+}
+
 main:nth-child(*) {
   margin: 20px;
 }
@@ -105,6 +147,7 @@ h2 {
   flex-wrap: wrap;
   margin-bottom: 25px;
   flex: 0 0 21%;
+  text-align: center;
 }
 
 .product img,
@@ -126,4 +169,15 @@ h2 {
   display: flex;
   flex-flow: row nowrap;
   margin: 0px 20px 20px 0px;
+}
+
+.shoptext {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.shopttext > p {
+  font-size: 16px;
+  font-weight: lighter;
+  margin-bottom: 10px;
 }
