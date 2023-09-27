@@ -121,6 +121,7 @@ header > div {
 
 #hero {
   width: 100%;
+  margin-top: 50px;
 }
 
 h2 {
@@ -150,18 +151,17 @@ h2 {
   text-align: center;
 }
 
-.product img,
-.shop img {
+.product > img,
+.shop > img {
   max-width: 200px;
-
   border-radius: 20px;
   border: 5px solid #96dcec;
-  margin: 0px 25px 0px 0px;
+  margin: 0px 25px 10px 0px;
 }
 
 .shops {
   display: flex;
-  flex-flow: column wrap;
+  flex-wrap: wrap;
   max-height: 700px;
 }
 
@@ -169,6 +169,7 @@ h2 {
   display: flex;
   flex-flow: row nowrap;
   margin: 0px 20px 20px 0px;
+  max-width: 46%;
 }
 
 .shoptext {
@@ -179,5 +180,11 @@ h2 {
 .shopttext > p {
   font-size: 16px;
   font-weight: lighter;
+  margin-bottom: 10px;
+}
+
+.shopttext > h3 {
+  font-size: 30px;
+  font-weight: bold;
   margin-bottom: 10px;
 }
