@@ -1,3 +1,7 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
 nav {
   width: 100%;
   background-color: darkgrey;
@@ -5,6 +9,8 @@ nav {
   flex-flow: row nowrap;
   justify-content: center;
   align-content: center;
+  display: flex;
+  padding: 10px 0px;
 }
 
 nav a {
@@ -16,7 +22,7 @@ nav a {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  align-content: center;
+  margin: 00px 10px;
 }
 
 main {
@@ -32,18 +38,17 @@ section {
   max-height: 400px;
   width: 100%;
   margin-top: 30px;
-  margin-bottom: 30px;
   width: 960px;
 }
 
 #hero {
   width: 100%;
   justify-content: center;
+  height: 450px;
 }
 
 #hero img {
   width: 960px;
-  height: 450px;
 }
 
 #threecolumns,
@@ -96,4 +101,5 @@ button {
 footer {
   background-color: lightslategrey;
   height: 200px;
+  margin-top: 30px;
 }
