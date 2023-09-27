@@ -1,0 +1,99 @@
+nav {
+  width: 100%;
+  background-color: darkgrey;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-content: center;
+}
+
+nav a {
+  height: 70px;
+  width: 200px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-content: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  display: flex;
+  max-height: 400px;
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 960px;
+}
+
+#hero {
+  width: 100%;
+  justify-content: center;
+}
+
+#hero img {
+  width: 960px;
+  height: 450px;
+}
+
+#threecolumns,
+#twocolumns {
+  justify-content: space-between;
+  width: 960px;
+}
+
+#threecolumns img {
+  height: 375px;
+  width: 300px;
+}
+
+#twocolumns img,
+#twocolumns > div {
+  width: 50%;
+}
+
+#twocolumns > img {
+  margin-right: 30px;
+}
+
+h2 {
+  font-size: 150%;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#twocolumns div p {
+  overflow: auto;
+  max-height: 250px;
+}
+
+#tworows {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  justify-content: space-between;
+}
+
+#twocolumns > * {
+  width: 50%;
+}
+
+button {
+  height: 50px;
+  border-radius: 20px;
+}
+
+footer {
+  background-color: lightslategrey;
+  height: 200px;
+}

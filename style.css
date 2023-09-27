@@ -1,7 +1,7 @@
 body {
   background: linear-gradient(#96dcec, #bb473a);
   font-family: "Knewave", serif;
-  margin: 15px;
+  margin: 20px 60px;
   font-size: 1.5rem;
   background-repeat: no-repeat;
   color: #262622;
@@ -86,7 +86,7 @@ h2 {
   -webkit-text-fill-color: #f7836f;
   -webkit-text-stroke: 0.8px;
   font-size: 2rem;
-  margin: 50px 0px 20px 0px;
+  margin: 50px 0px 40px 0px;
   align-self: center;
 }
 
@@ -104,7 +104,7 @@ h2 {
   align-items: center;
   flex-wrap: wrap;
   margin-bottom: 25px;
-  flex: 1 0 21%;
+  flex: 0 0 21%;
 }
 
 .product img,
@@ -113,5 +113,17 @@ h2 {
 
   border-radius: 20px;
   border: 5px solid #96dcec;
-  margin: 5px;
+  margin: 0px 25px 0px 0px;
+}
+
+.shops {
+  display: flex;
+  flex-flow: column wrap;
+  max-height: 700px;
+}
+
+.shop {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 0px 20px 20px 0px;
 }
