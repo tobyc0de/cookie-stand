@@ -103,9 +103,12 @@ h2 {
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
+  margin-bottom: 25px;
+  flex: 1 0 21%;
 }
 
-.product img {
+.product img,
+.shop img {
   max-width: 200px;
 
   border-radius: 20px;
