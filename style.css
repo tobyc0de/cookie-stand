@@ -106,8 +106,6 @@ header {
   grid-template-columns: 200px auto;
   vertical-align: middle;
   color: black;
-  -webkit-text-fill-color: #f7836f;
-  -webkit-text-stroke: 1px;
   font-size: 3rem;
 }
 header > div {
