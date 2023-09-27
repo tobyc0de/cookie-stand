@@ -96,6 +96,8 @@ h2 {
 button {
   height: 50px;
   border-radius: 20px;
+  font-size: 150%;
+  font-weight: bold;
 }
 
 footer {
