@@ -1,7 +1,7 @@
 body {
   background: linear-gradient(#96dcec, #bb473a);
   font-family: "Knewave", serif;
-  margin: 20px 60px;
+  margin: 20px 0px 0px 0px;
   font-size: 1.5rem;
   background-repeat: no-repeat;
   color: #262622;
@@ -13,6 +13,9 @@ header {
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
+}
+main {
+  margin: 20px 60px;
 }
 
 header {
