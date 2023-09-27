@@ -59,7 +59,7 @@ header > div {
   color: black;
   -webkit-text-fill-color: #f7836f;
   -webkit-text-stroke: 2px;
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 #hero {
@@ -69,6 +69,6 @@ header > div {
 h2 {
   color: black;
   -webkit-text-fill-color: #f7836f;
-  -webkit-text-stroke: 2px;
+  -webkit-text-stroke: 0.8px;
   font-size: 2rem;
 }
