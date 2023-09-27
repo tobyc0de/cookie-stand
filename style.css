@@ -35,11 +35,11 @@ tr:last-child {
   font-weight: bold;
 }
 
-body {
-  background-color: rgb(111, 171, 255);
-  background-size: 100px;
-  background-blend-mode: screen;
+body:not(#hero) {
+  background: linear-gradient(#96dcec, #bb473a);
   font-family: "Tangerine", serif;
+  margin: 15px;
+  font-size: 1.5rem;
 }
 
 header {
@@ -53,4 +53,16 @@ header > div {
 
 #logo {
   width: 200px;
+}
+
+#Logotext {
+  font-size: 5rem;
+}
+
+#hero {
+  width: 100%;
+}
+
+h2 {
+  font-size: 3rem;
 }
