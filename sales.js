@@ -18,63 +18,9 @@ const hours = [
   "7pm",
 ];
 let hourlyTotal = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-
-function LocationFactory(
-  location,
-  minCust,
-  maxCust,
-  avgCookiesPerCust,
-  customersPerHour,
-  cookiesPerHour,
-  totalCookiesSold
-) {
-  this.location = location;
-  this.minCust = minCust;
-  this.maxCust = maxCust;
-  this.avgCookiesPerCust = avgCookiesPerCust;
-  this.customersPerHour = customersPerHour;
-  this.cookiesPerHour = cookiesPerHour;
-  this.totalCookiesSold = totalCookiesSold;
-}
-
-let LocationsList = [];
-LocationFactory.prototype.calculateSales = function () {
-  for (let i = 0; i < hours.length; i++) {
-    const randNum = randomNumber(this.minCust, this.maxCust);
-    this.customersPerHour.push(randNum);
-    this.cookiesPerHour.push(Math.floor(randNum * this.avgCookiesPerCust));
-    this.totalCookiesSold += this.cookiesPerHour[i];
-    hourlyTotal[i] += this.cookiesPerHour[i];
-  }
-};
-
-LocationFactory.prototype.addToList = function () {
-  LocationsList.push(this.location);
-};
-
-LocationFactory.prototype.render = function () {
-  // create location row
-  const locationRow = document.createElement("tr");
-  // append row to table
-  shopTable.appendChild(locationRow);
-  // create name TD
-  const LocationTD = document.createElement("td");
-  // add text into TD
-  LocationTD.textContent = this.location;
-  // put name td into table row
-  locationRow.appendChild(LocationTD);
-  // create hourly cookies td
-  for (i = 0; i < hours.length; i++) {
-    const hourlyTD = document.createElement("td");
-    hourlyTD.textContent = this.cookiesPerHour[i];
-    locationRow.appendChild(hourlyTD);
-  }
-
-  // create  and append totalcookies TD
-  const totalCookiesTD = document.createElement("td");
-  totalCookiesTD.textContent = this.totalCookiesSold;
-  locationRow.appendChild(totalCookiesTD);
-};
+let locationsList = [];
+const seattle = new LocationFactory("seattle", 6, 53, 1.4, [], [], 0);
+const tokyo = new LocationFactory("tokyo", 3, 34, 3.6, [], [], 0);
 
 // take element tableOfShops
 const tableDiv = document.getElementById("tableOfShops");
@@ -99,12 +45,66 @@ const totalCell = document.createElement("th");
 totalCell.textContent = "Total";
 headerRow.appendChild(totalCell);
 
+function LocationFactory(
+  location,
+  minCust,
+  maxCust,
+  avgCookiesPerCust,
+  customersPerHour,
+  cookiesPerHour,
+  totalCookiesSold
+) {
+  this.location = location;
+  this.minCust = minCust;
+  this.maxCust = maxCust;
+  this.avgCookiesPerCust = avgCookiesPerCust;
+  this.customersPerHour = customersPerHour;
+  this.cookiesPerHour = cookiesPerHour;
+  this.totalCookiesSold = totalCookiesSold;
+}
+
+LocationFactory.prototype.calculateSales = function () {
+  for (let i = 0; i < hours.length; i++) {
+    const randNum = randomNumber(this.minCust, this.maxCust);
+    this.customersPerHour.push(randNum);
+    this.cookiesPerHour.push(Math.floor(randNum * this.avgCookiesPerCust));
+    this.totalCookiesSold += this.cookiesPerHour[i];
+    hourlyTotal[i] += this.cookiesPerHour[i];
+  }
+};
+
+LocationFactory.prototype.addToList = function () {
+  locationsList.push(this.location);
+};
+
+LocationFactory.prototype.render = function () {
+  // create location row
+  const locationRow = document.createElement("tr");
+  // append row to table
+  shopTable.appendChild(locationRow);
+  // create name TD
+  const LocationTD = document.createElement("td");
+  // add text into TD
+  LocationTD.textContent = this.location;
+  // put name td into table row
+  locationRow.appendChild(LocationTD);
+  // create hourly cookies td
+  for (i = 0; i < hours.length; i++) {
+    const hourlyTD = document.createElement("td");
+    hourlyTD.textContent = this.cookiesPerHour[i];
+    locationRow.appendChild(hourlyTD);
+  }
+  // create  and append totalcookies TD
+  const totalCookiesTD = document.createElement("td");
+  totalCookiesTD.textContent = this.totalCookiesSold;
+  locationRow.appendChild(totalCookiesTD);
+};
+
 LocationFactory.prototype.addTotalRow = function () {
   // create bottom row
   const bottomRow = document.createElement("tr");
   shopTable.appendChild(bottomRow);
   bottomRow.classList.add("totalrow");
-
   // add Totals cell
   const totalCell2 = document.createElement("td");
   totalCell2.textContent = "Total";
@@ -117,12 +117,8 @@ LocationFactory.prototype.addTotalRow = function () {
     bottomRow.appendChild(hourlyTotalTD);
   }
   console.log(`hourlyTotal: ${hourlyTotal}`);
-
-  console.log(`LocationsList: ${LocationsList}`);
+  console.log(`locationsList: ${locationsList}`);
 };
-
-const seattle = new LocationFactory("seattle", 2, 10, 1.4, [], [], 0);
-const tokyo = new LocationFactory("tokyo", 3, 12, 1.2, [], [], 0);
 
 seattle.calculateSales();
 tokyo.calculateSales();
@@ -137,6 +133,24 @@ tokyo.addTotalRow();
 
 // UUUUSER INPUT!
 const newPlace = document.getElementById("newlocationform");
+
+//// Checking if location already exists - not working
+// newPlace.addEventListener(
+//   "submit",
+//   function (event) {
+//     const newLocName2 = event.target.location.value;
+//     for (let index = 0; index < locationsList.length; index++) {
+//       console.log(
+//         "log " + locationsList[index].location + " vs " + newLocName2
+//       );
+//       if (newLocName2 === locationsList[index].location) {
+//         console.log("aaah");
+//       }
+//     }
+//   }
+
+//   //closing the event listener
+// );
 
 newPlace.addEventListener(
   "submit",
@@ -159,7 +173,7 @@ newPlace.addEventListener(
     );
     createNewPlace.calculateSales();
     createNewPlace.addToList();
-    console.log(LocationsList);
+    console.log(locationsList);
     createNewPlace.render();
     console.log(createNewPlace);
 
@@ -168,5 +182,3 @@ newPlace.addEventListener(
 
   //closing the event listener
 );
-
-// END OF USER INPUT!

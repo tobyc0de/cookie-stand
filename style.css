@@ -130,10 +130,15 @@ button {
   font-size: 1rem;
   border-radius: 15px;
   margin: 10px 0px;
+  font-family: "Knewave", serif;
 }
 button:hover {
   background-color: #f7836f;
   transition: 300ms;
+}
+
+input {
+  font-family: "Knewave", serif;
 }
 
 .totalrow:not(:last-of-type) {
