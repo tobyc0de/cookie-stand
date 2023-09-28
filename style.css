@@ -107,13 +107,13 @@ th {
   color: white;
 }
 
-td:last-child,
+/* td:last-child,
 td:first-child,
 tr:last-child {
   background-color: #8d2cde;
   color: white;
   font-weight: bold;
-}
+} */
 
 header {
   display: flex;
@@ -235,4 +235,8 @@ footer {
 footer ul {
   font-size: 16px;
   font-weight: lighter;
+}
+
+#form {
+  margin-bottom: 100px;
 }

@@ -36,7 +36,7 @@ function LocationFactory(
   this.totalCookiesSold = totalCookiesSold;
 }
 
-let hourlyTotal = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+let hourlyTotal = [];
 const seattle = new LocationFactory("seattle", 23, 65, 6.3, [], [], 0);
 const tokyo = new LocationFactory("tokyo", 3, 12, 1.2, [], [], 0);
 const dubai = new LocationFactory("dubai", 11, 38, 3.7, [], [], 0);
@@ -126,6 +126,38 @@ for (i = 0; i < hours.length; i++) {
     lima.cookiesPerHour[i];
   console.log(hourlyTotal);
 }
+
+// UUUUSER INPUT!
+const newPlace = document.getElementById("newlocationform");
+
+newPlace.addEventListener(
+  "submit",
+  function (event) {
+    event.preventDefault();
+    const newLocName = event.target.location.value;
+    const minCust = event.target.minCust.value;
+    const maxCust = event.target.maxCust.value;
+    const avgCookiesPerCust = event.target.avgCookiesPerCust.value;
+
+    const createNewPlace = new LocationFactory(
+      newLocName,
+      +minCust,
+      +maxCust,
+      +avgCookiesPerCust,
+      [],
+      [],
+      0
+    );
+    console.log(createNewPlace);
+    createNewPlace.calculateSales();
+    hourlyTotal.push(totalCookiesSold);
+    createNewPlace.render();
+  }
+
+  //closing the event listener
+);
+
+// END OF USER INPUT!
 
 // create bottom row
 const bottomRow = document.createElement("tr");

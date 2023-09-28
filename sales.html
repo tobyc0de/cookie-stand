@@ -21,9 +21,26 @@
       </nav>
     </header>
     <main>
+      <section">
+        <form id="newlocationform">
+          <fieldset>
+            <label for="location">Location</label>
+            <input type="text" name="location" id="location" />
+            <label for="minCust">minCust</label>
+            <input type="number" name="minCust" id="minCust" />
+            <label for="maxCust">maxCust</label>
+            <input type="number"  name="maxCust" id="maxCust" />
+            <label for="avgCookiesPerCust">avgCookiesPerCust</label>
+            <input 
+              type="number"
+              name="avgCookiesPerCust"
+              id="avgCookiesPerCust"
+            />
+          </fieldset>
+          <button type="submit">Create new Shop</button>
+        </form>
+      </section>
       <div id="tableOfShops"></div>
-
-      <div id="listOfShops"></div>
     </main>
     <footer></footer>
   </body>
