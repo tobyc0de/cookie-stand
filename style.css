@@ -1,7 +1,7 @@
 body {
   background: linear-gradient(#96dcec, #bb473a);
   font-family: "Knewave", serif;
-  margin: 20px 0px 0px 0px;
+  margin: 5px 0px 0px 0px;
   font-size: 1.5rem;
   background-repeat: no-repeat;
   color: #31312c;
@@ -21,7 +21,10 @@ main {
 header {
   display: flex;
   justify-content: center;
-  border-bottom: 1px dashed salmon;
+  border-bottom: 2px dashed salmon;
+  position: sticky;
+  top: 0px;
+  background-color: #96dcec;
 }
 nav {
   width: 960px;
@@ -31,6 +34,7 @@ nav {
   align-content: center;
   display: flex;
   padding: 10px 0px;
+  align-items: flex-end;
 }
 
 nav > img {
@@ -45,28 +49,27 @@ nav > img {
 }
 
 nav > a {
-  height: 70px;
-  width: 200px;
+  width: 150px;
   color: #31312c;
   text-align: center;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  margin: 00px 10px;
+  margin: 0px 30px 5px 30px;
   text-decoration: none;
   font-size: 25px;
-  border-radius: 15px;
+  border-bottom: 2px dashed transparent;
 }
 nav > a:hover {
   color: #f7836f;
 }
 
-nav > a:not(:first-of-type) {
-  border: 1px dashed salmon;
+nav > a:not(:first-of-type):hover {
+  border-bottom: 2px dashed salmon;
 }
 
-nav > a:hover {
-  border: 1px dashed #31312c;
+nav > a:not(:first-of-type):hover {
+  border-bottom: 2px dashed #31312c;
 }
 
 main:nth-child(*) {
@@ -164,19 +167,26 @@ h2 {
 .shop > img {
   max-width: 200px;
   border-radius: 20px;
-  border: 5px solid #96dcec;
   margin: 0px 0px 10px 0px;
 }
-.product > img:hover,
-.shop > img:hover {
+
+.product:nth-of-type(odd) > img,
+.shop:nth-of-type(odd) > img {
+  border: 5px solid #96dcec;
+}
+
+.product:nth-of-type(even) > img,
+.shop:nth-of-type(even) > img {
   border: 5px solid salmon;
 }
 
+.product > img:hover,
+.shop > img:hover {
+  border: 5px solid #31312c;
+}
+
 .shop > img {
-  max-width: 200px;
-  border-radius: 20px;
-  border: 5px solid #96dcec;
-  margin: 0px 25px 10px 0px;
+  margin-right: 20px;
 }
 
 .shops {
