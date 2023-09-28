@@ -4,7 +4,7 @@ body {
   margin: 20px 0px 0px 0px;
   font-size: 1.5rem;
   background-repeat: no-repeat;
-  color: #262622;
+  color: #31312c;
 }
 
 main,
@@ -47,7 +47,7 @@ nav > img {
 nav > a {
   height: 70px;
   width: 200px;
-  color: #262622;
+  color: #31312c;
   text-align: center;
   display: flex;
   flex-flow: column nowrap;
@@ -55,9 +55,18 @@ nav > a {
   margin: 00px 10px;
   text-decoration: none;
   font-size: 25px;
+  border-radius: 15px;
 }
 nav > a:hover {
   color: #f7836f;
+}
+
+nav > a:not(:first-of-type) {
+  border: 1px dashed salmon;
+}
+
+nav > a:hover {
+  border: 1px dashed #31312c;
 }
 
 main:nth-child(*) {
@@ -127,7 +136,7 @@ header > div {
 h2 {
   color: black;
   -webkit-text-fill-color: #f7836f;
-  -webkit-text-stroke: 0.8px;
+  -webkit-text-stroke: 1.5px;
   font-size: 2rem;
   margin: 50px 0px 40px 0px;
   align-self: center;
@@ -157,6 +166,10 @@ h2 {
   border-radius: 20px;
   border: 5px solid #96dcec;
   margin: 0px 0px 10px 0px;
+}
+.product > img:hover,
+.shop > img:hover {
+  border: 5px solid salmon;
 }
 
 .shop > img {
@@ -199,4 +212,17 @@ h2 {
 footer {
   background-color: #f7836f;
   height: 200px;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: space-around;
+  justify-content: space-evenly;
+}
+
+footer ul {
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+footer h3 {
+  margin-bottom: 10px;
 }

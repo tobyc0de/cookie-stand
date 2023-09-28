@@ -42,6 +42,7 @@ const tokyo = new LocationFactory("tokyo", 3, 12, 1.2, [], [], 0);
 const dubai = new LocationFactory("dubai", 11, 38, 3.7, [], [], 0);
 const paris = new LocationFactory("paris", 20, 38, 2.3, [], [], 0);
 const lima = new LocationFactory("lima", 2, 16, 4.6, [], [], 0);
+const cambridge = new LocationFactory("cambridge", 3, 10, 4.2, [], [], 0);
 
 LocationFactory.prototype.calculateSales = function () {
   for (let i = 0; i < hours.length; i++) {
@@ -106,12 +107,14 @@ tokyo.calculateSales();
 dubai.calculateSales();
 paris.calculateSales();
 lima.calculateSales();
+cambridge.calculateSales();
 
 seattle.render();
 tokyo.render();
 dubai.render();
 paris.render();
 lima.render();
+cambridge.render();
 
 // Calc Totals for each hour
 for (i = 0; i < hours.length; i++) {
