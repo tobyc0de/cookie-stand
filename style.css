@@ -62,17 +62,17 @@ nav > a {
 }
 nav > a:hover {
   color: #f7836f;
-  transition: 300ms;
+  transition: 1000ms;
 }
 
 nav > a:not(:first-of-type):hover {
   border-bottom: 2px dashed salmon;
-  transition: 300ms;
+  transition: 1000ms;
 }
 
 nav > a:not(:first-of-type):hover {
   border-bottom: 2px dashed #31312c;
-  transition: 300ms;
+  transition: 1000ms;
 }
 
 main:nth-child(*) {
@@ -186,7 +186,7 @@ h2 {
 .product > img:hover,
 .shop > img:hover {
   border: 5px solid #31312c;
-  transition: 300ms;
+  transition: 1000ms;
 }
 
 .shop > img {
