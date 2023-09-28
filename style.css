@@ -95,14 +95,52 @@ th {
   font-size: 1.5rem;
 }
 
-tr:nth-of-type(odd) {
-  background-color: salmon;
-}
-tr:nth-of-type(even) {
+tr {
   background-color: rgb(150, 255, 131);
 }
 
 th {
+  background-color: blueviolet;
+  color: white;
+}
+
+form {
+  margin: 20px 20px 50px 20px;
+}
+fieldset {
+  display: flex;
+  flex-flow: column nowrap;
+  font-size: 1rem;
+  max-width: 200px;
+}
+
+fieldset input,
+button {
+  padding: 10px 10px;
+  margin-bottom: 10px;
+}
+
+legend {
+  margin: 10px 0px;
+}
+button {
+  background-color: #96ff83;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 15px;
+  margin: 10px 0px;
+}
+button:hover {
+  background-color: #f7836f;
+  transition: 300ms;
+}
+
+.totalrow:not(:last-of-type) {
+  display: none;
+}
+
+.totalrow:last-of-type {
   background-color: blueviolet;
   color: white;
 }

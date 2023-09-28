@@ -23,21 +23,19 @@
     <main>
       <section">
         <form id="newlocationform">
-          <fieldset>
-            <label for="location">Location</label>
-            <input type="text" name="location" id="location" />
-            <label for="minCust">minCust</label>
-            <input type="number" name="minCust" id="minCust" />
-            <label for="maxCust">maxCust</label>
-            <input type="number"  name="maxCust" id="maxCust" />
-            <label for="avgCookiesPerCust">avgCookiesPerCust</label>
-            <input 
+          <fieldset name="bla" id="bla">
+            <legend>Create new Location calculation</legend>
+
+            <input type="text" name="location" id="location" placeholder="Location name" />
+            <input type="number" name="minCust" id="minCust" placeholder="Min customers"/>
+            <input type="number"  name="maxCust" id="maxCust" placeholder="Max customers"/>
+            <input   step=".1"
               type="number"
               name="avgCookiesPerCust"
-              id="avgCookiesPerCust"
-            />
+              id="avgCookiesPerCust" placeholder="Avg # cookies per customer"
+            />          <button type="submit">Create new Shop</button>
+
           </fieldset>
-          <button type="submit">Create new Shop</button>
         </form>
       </section>
       <div id="tableOfShops"></div>
