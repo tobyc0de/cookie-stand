@@ -114,7 +114,7 @@ LocationFactory.prototype.addTotalRow = function () {
   totalCell2.id = "bottom row total text";
   bottomRow.appendChild(totalCell2);
   // Add hourlyTotals to table
-  for (i = 0; i < hourlyTotal.length; i++) {
+  for (i = 0; i < hours.length; i++) {
     const hourlyTotalTD = document.createElement("td");
     hourlyTotalTD.textContent = hourlyTotal[i];
     bottomRow.appendChild(hourlyTotalTD);
