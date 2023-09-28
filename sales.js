@@ -37,13 +37,7 @@ function LocationFactory(
 }
 
 let hourlyTotal = [];
-const seattle = new LocationFactory("seattle", 23, 65, 6.3, [], [], 0);
-const tokyo = new LocationFactory("tokyo", 3, 12, 1.2, [], [], 0);
-const dubai = new LocationFactory("dubai", 11, 38, 3.7, [], [], 0);
-const paris = new LocationFactory("paris", 20, 38, 2.3, [], [], 0);
-const lima = new LocationFactory("lima", 2, 16, 4.6, [], [], 0);
-const cambridge = new LocationFactory("cambridge", 3, 10, 4.2, [], [], 0);
-
+let LocationsList = [];
 LocationFactory.prototype.calculateSales = function () {
   for (let i = 0; i < hours.length; i++) {
     const randNum = randomNumber(this.minCust, this.maxCust);
@@ -53,28 +47,9 @@ LocationFactory.prototype.calculateSales = function () {
   }
 };
 
-// take element tableOfShops
-const tableDiv = document.getElementById("tableOfShops");
-//create table
-const shopTable = document.createElement("table");
-tableDiv.appendChild(shopTable);
-// create header row
-const headerRow = document.createElement("tr");
-// append header row to table
-shopTable.appendChild(headerRow);
-//put empty cell into header row
-const emptyCell = document.createElement("td");
-headerRow.appendChild(emptyCell);
-// put hours into header row
-for (i = 0; i < hours.length; i++) {
-  const headerTD = document.createElement("th");
-  headerTD.textContent = hours[i];
-  headerRow.appendChild(headerTD);
-}
-//put Total cell into header row
-const totalCell = document.createElement("th");
-totalCell.textContent = "Total";
-headerRow.appendChild(totalCell);
+LocationFactory.prototype.addToList = function () {
+  LocationsList.push(this.location);
+};
 
 LocationFactory.prototype.render = function () {
   // create location row
@@ -100,7 +75,35 @@ LocationFactory.prototype.render = function () {
   locationRow.appendChild(totalCookiesTD);
 };
 
-console.log(seattle);
+// take element tableOfShops
+const tableDiv = document.getElementById("tableOfShops");
+//create table
+const shopTable = document.createElement("table");
+tableDiv.appendChild(shopTable);
+// create header row
+const headerRow = document.createElement("tr");
+// append header row to table
+shopTable.appendChild(headerRow);
+//put empty cell into header row
+const emptyCell = document.createElement("td");
+headerRow.appendChild(emptyCell);
+// put hours into header row
+for (i = 0; i < hours.length; i++) {
+  const headerTD = document.createElement("th");
+  headerTD.textContent = hours[i];
+  headerRow.appendChild(headerTD);
+}
+// put Total cell into header row
+const totalCell = document.createElement("th");
+totalCell.textContent = "Total";
+headerRow.appendChild(totalCell);
+
+const seattle = new LocationFactory("seattle", 2, 10, 1.4, [], [], 0);
+const tokyo = new LocationFactory("tokyo", 3, 12, 1.2, [], [], 0);
+const dubai = new LocationFactory("dubai", 1, 4, 1.7, [], [], 0);
+const paris = new LocationFactory("paris", 2, 8, 2.3, [], [], 0);
+const lima = new LocationFactory("lima", 2, 6, 2.6, [], [], 0);
+const cambridge = new LocationFactory("cambridge", 3, 10, 4.2, [], [], 0);
 
 seattle.calculateSales();
 tokyo.calculateSales();
@@ -116,10 +119,17 @@ paris.render();
 lima.render();
 cambridge.render();
 
+seattle.addToList();
+tokyo.addToList();
+dubai.addToList();
+paris.addToList();
+lima.addToList();
+cambridge.addToList();
+
 // Calc Totals for each hour
 for (i = 0; i < hours.length; i++) {
   hourlyTotal[i] =
-    seattle.cookiesPerHour[i] +
+    LocationsList[].cookiesPerHour[i] +
     tokyo.cookiesPerHour[i] +
     dubai.cookiesPerHour[i] +
     paris.cookiesPerHour[i] +
@@ -138,6 +148,7 @@ newPlace.addEventListener(
     const minCust = event.target.minCust.value;
     const maxCust = event.target.maxCust.value;
     const avgCookiesPerCust = event.target.avgCookiesPerCust.value;
+    let totalCookiesSold;
 
     const createNewPlace = new LocationFactory(
       newLocName,
@@ -151,7 +162,10 @@ newPlace.addEventListener(
     console.log(createNewPlace);
     createNewPlace.calculateSales();
     hourlyTotal.push(totalCookiesSold);
+    createNewPlace.addToList();
+    console.log(LocationsList);
     createNewPlace.render();
+    addTotalRow();
   }
 
   //closing the event listener
@@ -159,16 +173,19 @@ newPlace.addEventListener(
 
 // END OF USER INPUT!
 
-// create bottom row
-const bottomRow = document.createElement("tr");
-shopTable.appendChild(bottomRow);
-// add Totals cell
-const totalCell2 = document.createElement("td");
-totalCell2.textContent = "Total";
-bottomRow.appendChild(totalCell2);
-// Add hourlyTotals to table
-for (i = 0; i < hourlyTotal.length; i++) {
-  const hourlyTotalTD = document.createElement("td");
-  hourlyTotalTD.textContent = hourlyTotal[i];
-  bottomRow.appendChild(hourlyTotalTD);
+function addTotalRow() {
+  // create bottom row
+  const bottomRow = document.createElement("tr");
+  shopTable.appendChild(bottomRow);
+  // add Totals cell
+  const totalCell2 = document.createElement("td");
+  totalCell2.textContent = "Total";
+  bottomRow.appendChild(totalCell2);
+  // Add hourlyTotals to table
+  for (i = 0; i < hourlyTotal.length; i++) {
+    const hourlyTotalTD = document.createElement("td");
+    hourlyTotalTD.textContent = hourlyTotal[i];
+    bottomRow.appendChild(hourlyTotalTD);
+  }
+  console.log(LocationsList);
 }
