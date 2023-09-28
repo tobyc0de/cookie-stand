@@ -17,6 +17,7 @@ const hours = [
   "6pm",
   "7pm",
 ];
+let hourlyTotal = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 function LocationFactory(
   location,
@@ -36,7 +37,6 @@ function LocationFactory(
   this.totalCookiesSold = totalCookiesSold;
 }
 
-let hourlyTotal = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 let LocationsList = [];
 LocationFactory.prototype.calculateSales = function () {
   for (let i = 0; i < hours.length; i++) {
@@ -46,9 +46,6 @@ LocationFactory.prototype.calculateSales = function () {
     this.totalCookiesSold += this.cookiesPerHour[i];
     hourlyTotal[i] += this.cookiesPerHour[i];
   }
-  console.log(
-    `added hourlytotal ${this.cookiesPerHour} to the hourlytotal ${hourlyTotal}`
-  );
 };
 
 LocationFactory.prototype.addToList = function () {
@@ -114,45 +111,29 @@ LocationFactory.prototype.addTotalRow = function () {
   totalCell2.id = "bottom row total text";
   bottomRow.appendChild(totalCell2);
   // Add hourlyTotals to table
-  for (i = 0; i < hours.length; i++) {
+  for (i = 0; i < hourlyTotal.length; i++) {
     const hourlyTotalTD = document.createElement("td");
     hourlyTotalTD.textContent = hourlyTotal[i];
     bottomRow.appendChild(hourlyTotalTD);
   }
-  console.log(LocationsList);
+  console.log(`hourlyTotal: ${hourlyTotal}`);
+
+  console.log(`LocationsList: ${LocationsList}`);
 };
 
 const seattle = new LocationFactory("seattle", 2, 10, 1.4, [], [], 0);
 const tokyo = new LocationFactory("tokyo", 3, 12, 1.2, [], [], 0);
-// const dubai = new LocationFactory("dubai", 1, 4, 1.7, [], [], 0);
-// const paris = new LocationFactory("paris", 2, 8, 2.3, [], [], 0);
-// const lima = new LocationFactory("lima", 2, 6, 2.6, [], [], 0);
-// const cambridge = new LocationFactory("cambridge", 3, 10, 4.2, [], [], 0);
 
 seattle.calculateSales();
 tokyo.calculateSales();
-// dubai.calculateSales();
-// paris.calculateSales();
-// lima.calculateSales();
-// cambridge.calculateSales();
 
 seattle.render();
 tokyo.render();
-// dubai.render();
-// paris.render();
-// lima.render();
-// cambridge.render();
 
 seattle.addToList();
 tokyo.addToList();
 
 tokyo.addTotalRow();
-
-console.log(seattle);
-// dubai.addToList();
-// paris.addToList();
-// lima.addToList();
-// cambridge.addToList();
 
 // UUUUSER INPUT!
 const newPlace = document.getElementById("newlocationform");
@@ -176,12 +157,12 @@ newPlace.addEventListener(
       [],
       0
     );
-    console.log(createNewPlace);
     createNewPlace.calculateSales();
-    hourlyTotal.push(totalCookiesSold);
     createNewPlace.addToList();
     console.log(LocationsList);
     createNewPlace.render();
+    console.log(createNewPlace);
+
     createNewPlace.addTotalRow();
   }
 
