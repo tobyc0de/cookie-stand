@@ -21,24 +21,41 @@
       </nav>
     </header>
     <main>
-      <section">
+      <section id="formandtable">
         <form id="newlocationform">
           <fieldset name="bla" id="bla">
             <h3>Create new Location calculation</h3>
 
-            <input type="text" name="location" id="location" placeholder="Location name" />
-            <input type="number" name="minCust" id="minCust" placeholder="Min customers"/>
-            <input type="number"  name="maxCust" id="maxCust" placeholder="Max customers"/>
-            <input   step=".1"
+            <input
+              type="text"
+              name="location"
+              id="location"
+              placeholder="Location name"
+            />
+            <input
+              type="number"
+              name="minCust"
+              id="minCust"
+              placeholder="Min customers"
+            />
+            <input
+              type="number"
+              name="maxCust"
+              id="maxCust"
+              placeholder="Max customers"
+            />
+            <input
+              step=".1"
               type="number"
               name="avgCookiesPerCust"
-              id="avgCookiesPerCust" placeholder="Avg # cookies per customer"
-            />          <button type="submit">Create new Shop</button>
-
+              id="avgCookiesPerCust"
+              placeholder="Avg # cookies per customer"
+            />
+            <button type="submit">Create new Shop</button>
           </fieldset>
         </form>
+        <div id="tableOfShops"></div>
       </section>
-      <div id="tableOfShops"></div>
     </main>
     <footer></footer>
   </body>
