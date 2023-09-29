@@ -246,7 +246,6 @@ h2 {
 .shops {
   display: flex;
   flex-wrap: wrap;
-  max-height: 700px;
 }
 
 .shop {
