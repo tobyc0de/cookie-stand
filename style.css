@@ -251,9 +251,10 @@ h2 {
 
 .shop {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   margin: 0px 20px 20px 0px;
   max-width: 46%;
+  flex-basis: 50%;
 }
 
 .shoptext {

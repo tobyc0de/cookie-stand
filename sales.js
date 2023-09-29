@@ -104,7 +104,7 @@ LocationFactory.prototype.addTotalRow = function () {
   // create bottom row
   const bottomRow = document.createElement("tr");
   shopTable.appendChild(bottomRow);
-  bottomRow.classList.add("totalrow");
+  bottomRow.classList.add("totalrow2");
   // add Totals cell
   const totalCell2 = document.createElement("td");
   totalCell2.textContent = "Total";
