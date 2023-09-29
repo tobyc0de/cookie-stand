@@ -246,6 +246,7 @@ h2 {
 .shops {
   display: flex;
   flex-wrap: wrap;
+  gap: 50px;
 }
 
 .shop {
